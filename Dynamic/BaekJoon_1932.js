@@ -21,7 +21,7 @@ const answer = ([n, ...arr]) => {
         }
     }
 
-    console.log(dp)
+    // console.log(dp)
     console.log(Math.max(...dp[n - 1]));
 };
 
@@ -32,7 +32,7 @@ require("readline")
         input.push(line);
     })
     .on("close", () => {
-        console.log(input)
+        // console.log(input)
         answer(input);
         process.exit();
     });
