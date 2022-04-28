@@ -5,10 +5,10 @@ const answer = (number) => {
     arr[2] = 2;
 
     for (let index = 3; index < arr.length; index++) {
-        arr[index] = arr[index-1] + arr[index-2];        
+        arr[index] = (arr[index-1] + arr[index-2]) % 15746;        
     }
 
-    const result = arr[number] % 15746;
+    const result = arr[number];
 
     console.log(result);
 }
