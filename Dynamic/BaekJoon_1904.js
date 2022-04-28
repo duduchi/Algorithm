@@ -8,13 +8,23 @@ const answer = (number) => {
         arr[index] = arr[index-1] + arr[index-2];        
     }
 
-    console.log(arr)
     const result = arr[number] % 15746;
 
-    return result;
+    console.log(result);
 }
 
-console.log(answer(4));
+
+const input = [];
+require("readline")
+    .createInterface(process.stdin, process.stdout)
+    .on("line", (line) => {
+        input.push(line);
+    })
+    .on("close", () => {
+        // console.log(input)
+        answer(Number(input));
+        process.exit();
+    });
 
 
 // https://www.acmicpc.net/problem/1904
