@@ -1,3 +1,5 @@
+import Heap from 'heap-js';
+
 const answer = ([data,...line]) => {
 
     const [n,m] = data.split(" ").map(Number);
@@ -16,11 +18,14 @@ const answer = ([data,...line]) => {
         nodes[data[1]].push([data[2],data[0]]);
     })
 
-    const heap=[[0,1]];
+    const heap = new Heap();
+    heap.init([0,1])
+    // const heap=[[0,1]];
 
     while(heap.length){
-        heap.sort((a,b) => a[0]- b[0]);
-        const [e,v] = heap.shift();
+        // heap.sort((a,b) => a[0]- b[0]);
+        // const [e,v] = heap.shift();
+        const [e,v] = heap.pop();
         if(checked[v] === false){
             checked[v] = true;
             answer += e;
